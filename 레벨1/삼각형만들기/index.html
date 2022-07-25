@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>삼각형만들기</title>
+</head>
+<body>
+<script>
+    function  solution(a,b,c) {
+       let answer = 'Yes' , max;
+       let sum = a + b + c;
+       if(a > b) max = a;
+       else max = b;
+       if(c < max ) max =c;
+       if((sum - max) <= max) answer = 'No';
+
+
+        return answer;
+    }
+    console.log(solution(1,4,7))
+</script>
+
+</body>
+</html>
