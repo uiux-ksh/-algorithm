@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10부제</title>
+</head>
+<body>
+<script>
+    let a =[12,3];
+    let b =a[0].toString().substring(0,1);
+    console.log(b);
+    //일의 자리 숫자가 3이 들어갈떄 카운트를 추가
+    function solution(day,arr) {
+        let answer =0;
+        for(let x of arr){
+            if(x%10 === day) answer++;
+            //(추가해봄) 십의자리 숫자 (앞)  3이 붙어있으면 10을 더해라
+            if(x.toString().substring(0,1) === day.toString()) answer+= 10;
+        }
+        return answer;
+    }
+  arr =[15,23,11,46,34,53,13,30];
+
+    console.log(solution(3,arr));
+
+
+   let  filter =[]
+    arr.forEach((item,) => {
+        if(item <30)   filter.push(item);
+    } );
+    console.log(filter);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>배열 필수 ㅘㅇ목</title>
+</head>
+<body>
+<script>
+
+    //forEach , map , filter ,reduce
+     let a =[10,11,12,13,14,15];
+     // a.forEach((매개변수) => console.log(매개변수)) //10,11,12 ,13 ...
+
+     a.map((매개변수1,idx) =>  console.log(`값:${매개변수1},인덱스${idx}`)  );
+    let b =[10,11,12,13,14,15];
+    let c =[10,11,12,132,142,15];
+    let d =[10,11,12,132,142,15222];
+    let sum2 = 0 ;
+    let sum3 = 0 ;
+    let sum4 = 0 ;
+     // for (let i =0; i<b.length;  i++ ){
+     //      sum2 +=  b[i];
+     //
+     // }
+     b.map(item => sum2+=item);
+
+     // function sum(arr){
+     //     let answer = 0;
+     //     arr.map(item => answer+= item);
+     //     return answer
+     // }
+
+     c.forEach(item => sum3+=item );
+     d.reduce( (prev,total) => sum4 = prev + total );
+    console.log(sum2);
+    console.log(sum3);
+    console.log(sum4);
+
+
+    //팩토리얼 만들어보기
+    function F(n) {
+        let answer =1;
+        for(n; n > 1 ; n --){
+          // answer*=n ;
+            answer = answer * n ;
+        }
+        return answer;
+    }
+    console.log(F(5))
+    //팩토리얼 재귀함수로 구현해보기 효율 짧으면 for으로 사용하자
+    function me(n){
+     if(n <= 1) return 1;
+      return  n * me(n-1);
+    }
+    console.log(me(4));
+
+
+
+
+</script>
+
+</body>
+</html>

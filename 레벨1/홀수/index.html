@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>홀수</title>
+</head>
+<body>
+<script>
+
+//    function solution(n){
+//        let answer;
+//        if(n %2 === 1){
+//            answer='홀수';
+//        }
+//        else answer ='짝수';
+//        return answer;
+//    }
+arr = [12,77,38,55,92,85];
+  function pp (arr){
+      let answer2 =[];
+      let min =Number.MAX_SAFE_INTEGER;
+      //for of 사용해보기
+      for(x of arr) {
+          if(x < min)  min = x;
+      }
+      answer2.push(min);
+      return answer2;
+
+  }
+  console.log(pp(arr));
+
+//배열로 홀수 최소값과  홀수 합의
+    function  solution(n){
+        let answer = [];
+        let sum =0,min=Number.MAX_SAFE_INTEGER;
+        for(let x of n) {
+          if( x % 2 === 1){
+            sum+=x;
+             if(x<min) min=x;
+          }
+        }
+        answer.push(sum);
+        answer.push(min);
+        return answer;
+    }
+
+
+    console.log(solution(arr))
+</script>
+
+</body>
+</html>
