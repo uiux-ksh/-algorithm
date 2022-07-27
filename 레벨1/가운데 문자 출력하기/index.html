@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>가운데 문자 출력</title>
+</head>
+<body>
+<script>
+    function solution (s) {
+        let answer;
+        let mid =Math.floor(s.length/2);
+        if(s.length% 2 === 1) answer =s.substring(mid,mid+1);  //substring(2,3) study  0 1,2,3,4 2에서부터 3전까지니까 u가나옵니다. 2,4 ud가나옵니다.
+        else answer = s.substring(mid-1,mid+1);
+        return answer;
+    }
+    //홀수이면 study 가운데인 u를 짝수이면 stuudy uu가 2개 출력
+    let str ='abcdefg';
+    console.log(solution(str))
+    //substr 은 (start,length) str.substr(2,3) cde가 출력된다. 인덱스2번후 갯수 3개 substring은  구간 (start,end) str.substring(2,4) cd가 출력 4까지니까 4는안나옴
+    //혼자 해보자 ceil로 해보기
+    function center(s){
+        let answer;
+        let min =Math.ceil(s.length/2);
+        if(s.length%2 ===1 ) answer = s.substring(min-1,min);
+        else answer = s.substring(min-1,min+1);
+        return answer;
+    }
+    let str2 ='abcd';
+    console.log(center(str2))
+</script>
+
+</body>
+</html>

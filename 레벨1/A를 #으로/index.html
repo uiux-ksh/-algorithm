@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A를 #으로</title>
+</head>
+<body>
+<script>
+    function solution(n) {
+        let answer = '';
+        for( x of n ){
+            if(x === 'A') answer += '#';
+            else answer += x;
+        }
+        return answer;
+    }
+    let str = 'BANANA';
+    console.log(solution(str))
+
+    //문자열은 값만 복사되지 주소는 복사되지않는다 (얕은복사) replace사용해보기
+    function string(n) {
+        let answer =n;
+        answer = answer.replace(/A/gi,'#');//i를 붙히면 소문자까지 찾아준다.
+        return answer;
+    }
+    let str2 ='BAAAABBAAa';
+    console.log(string(str2));
+</script>
+</body>
+</html>

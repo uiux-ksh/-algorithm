@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>점수 계산</title>
+</head>
+<body>
+<script>
+    let arr =[1,0,1,1,1,0,0,1,1,0]
+    function solution2(arr){
+        let answer=0,cnt=0;
+        for(let x of arr ){
+            if(x===1){
+                cnt++;
+                answer+=cnt;
+            }
+            else cnt =0;
+        }
+            return answer;
+    }
+
+    console.log(solution2(arr));
+    //혼자풀이 연속으로 1이 나오면 +1이 가산점
+    function  solution(arr){
+        let answer = 0;
+        let count =0 ;
+        for(let i =0; i <arr.length; i ++ ){
+            if(arr[i] === 1){
+                count ++;
+                answer += count;
+            }
+            else count = 0;
+        }
+        return answer
+
+    }
+    console.log(solution(arr));
+</script>
+
+</body>
+</html>r

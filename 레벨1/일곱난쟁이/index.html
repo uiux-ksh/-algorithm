@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>일곱난쟁이</title>
+</head>
+<body>
+<script>
+ function solution(arr){
+     let answer = arr ;
+     let sum = arr.reduce((prev,acc) => prev + acc);
+
+     for(let i =0; i < 8; i ++) {
+         for(let j=i+1; j<9; j++){
+            if((sum-(arr[i]+arr[j]))=== 100){
+                arr.splice(j,1);
+                arr.splice(i,1);
+            }
+         }
+     }
+
+     return answer;
+ }
+ let arr =[20,7,23,19,10,15,25,8,13];
+ console.log(solution(arr));
+
+//아홉난쟁이중 2명의 거짓난쟁이 없애기  일곱난쟁이의 합은 200
+ function solution2(arr2) {
+     let answer =arr2;
+     let sum = answer.reduce((prev,acc) => prev + acc );
+     for(let i = 0; i < arr2.length -1; i ++){
+         for(let j = i + 1; j<arr2.length; j++){
+            if((sum-(arr2[i]+arr2[j])) === 200) {
+                arr2.splice(j,1);
+                arr2.splice(i,1);
+            }
+         }
+     }
+
+
+     return answer;
+ }
+
+ let arr2 = [20,13,44,32,55,17,8,31,35]
+ console.log(solution2(arr2));
+
+
+ //혼자 풀어보기
+
+ function king(n){
+     let answer =n;
+     let sum = n.reduce((initial,acc) => initial + acc);
+     for(let i =0; i<n.length-1; i ++){
+         for(let j = i+1; j <n.length; j ++){
+             if((sum-(n[i]+n[j]))===400){
+                 n.splice(j,1);
+                 n.splice(i,1);
+             }
+         }
+     }
+     return answer;
+ }
+
+ let array =[10,20,30,40,50,60,70,80,90]
+console.log(king(array))
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>중복문자제거 </title>
+</head>
+<body>
+<script>
+    function solution(s){
+        let answer ='' ;
+        // console.log(n.indexOf('k'));
+        for(let i = 0; i<s.length; i ++){
+            // console.log(s[i],i,s.indexOf(s[i]));
+         if(s.indexOf(s[i])===i) answer += s[i];
+        }
+        return answer;
+    }
+
+    console.log(solution('ksekkset'));
+    //겹치는 개 몇개인지 구하기
+    function indexCount(n) {
+        let answer =0;
+        let pos =n.indexOf('k');
+        while (pos !== -1 ){
+            answer ++;
+            pos= n.indexOf('k',pos+1);
+        }
+        return answer;
+
+
+    }
+    console.log(indexCount('ksekkset'))
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>대문자 찾기</title>
+</head>
+<body>
+<script>
+    function solution(n){
+        //toUpperCase x.toupperCase해줘도 값만바뀐다 전부바꿀려고 x=x.toupperCase로 바꿔주면된다.
+        //아스키 코드 chatCodeAt() A=65 Z=90 총 26개
+        let answer =0;
+        for( x of n) {
+            if(x=== x.toUpperCase()) answer ++;
+            // let num = x.charCodeAt();
+            // if(num >=65 && num <=90) answer++;
+        }
+        return answer;
+    }
+    let str ='KoreaTimeGoodAaAs';
+    console.log(solution(str));
+</script>
+
+</body>
+</html>

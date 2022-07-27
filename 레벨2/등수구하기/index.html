@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>등수구하기</title>
+</head>
+<body>
+<script>
+    let score =[87,89,92,100,76]
+    function solution(arr){
+        let answer=Array.from({length:arr.length}, () =>1);
+        for(let i = 0; i < arr.length; i ++) {
+            for(let j =0; j<arr.length; j++){
+                if(arr[j]>arr[i]) answer[i]++;
+            }
+        }
+        return answer;
+    }
+
+    console.log(solution(score));
+
+
+    function filter(arr){
+        let answer = arr.map((i) => arr.filter((j) => i < j).length +1 );
+        return answer;
+    }
+
+    console.log(filter(score));
+</script>
+
+</body>
+</html>

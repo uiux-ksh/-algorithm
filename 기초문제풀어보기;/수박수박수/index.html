@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    function solution(n){
+        let answer ='';
+        let su ='수박';
+        answer = n % 2 === 0 ? su.repeat(n/2) : su.repeat(n/2) + '수';
+        return answer;
+
+    }
+    console.log(solution(5))
+
+    //다른사람이 푼 코드 충격!!
+    function su(n){
+        let answer ='';
+       answer= "수박".repeat(n).slice(0,n);
+       return answer;
+    }
+    console.log(su(3));
+</script>
+
+</body>
+</html>
