@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>숫자만 출력</title>
+</head>
+<body>
+
+<script>
+    function solution(str){
+        let answer = "";
+        for(let x of str) {
+            if(!isNaN(x)) answer += x;
+        }
+
+        return parseInt(answer);
+    }
+
+    function solution2(str){
+        let answer = 0;
+        for(let x of str) {
+            if(!isNaN(x)) answer= answer * 10 +Number(x);
+        }
+
+        return answer;
+    }
+    let str ="G0s00n2T08eSoft";
+    console.log(solution(str));
+</script>
+</body>
+</html>
