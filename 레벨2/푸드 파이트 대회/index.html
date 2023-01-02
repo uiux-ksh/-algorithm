@@ -11,16 +11,15 @@
 <script>
 
     function solution(food) {
-        let front = '';
-        let answer ='';
+        let answer = '';
         let end =""
         for(let i =0; i<food.length; i++) {
             for(let j=0; j<Math.floor(food[i]/2); j++){
-                front += i + ''
+                answer += i + ''
             }
         }
-        end = front.split("").reverse().join("");
-        answer = front + 0 +end;
+        end = answer.split("").reverse().join("");
+        answer = answer + 0 + end;
         return answer;
     }
     console.log(solution([1,3,4,6]))
