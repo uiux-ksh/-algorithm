@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+#펠린드롬/회문
+앞으로 뒤로 읽었을때 같은 문자열
+ex) level eye hannah 토마토
+<script>
+    //1 추가 문자열 활용
+    function checks(str) {
+        let reversed = "";
+        for(let i = str.length -1; i>=0; i--) {
+            reversed += str[i];
+        }
+        return str === reversed;
+    }
+    console.log(checks('토마토'))
+    console.log(checks('adda'))
+    console.log(checks('hellos'))
+
+//    Two Pointer 투포인터 활용 시작과 끝
+     function Two(str) {
+        const len = str.length;
+        const middle = Math.floor(len/2);
+        for(let i = 0; i< middle; i++) {
+            if(str.charAt(i) !== str.charAt(len-1 - i)) {
+                return false;
+            }
+        }
+        return  true;
+     }
+    console.log(Two('토마토'))
+    console.log(Two('adda'))
+    console.log(Two('hellos'))
+
+</script>
+
+</body>
+</html>

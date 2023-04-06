@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+중복제거
+
+<script>
+<!--  set으로 제거하기-->
+ let array =[1,2,3,3,5,4,4,8,7,8];
+ let unique = [...new Set(array)];
+ console.log(unique);
+
+// 두번째로는 indexOf  <-- 배열메소드
+
+//indexOf는 찾는자리 맨처음자리만알려준다. [1,2,3,6] 3을리턴한다.
+ const nums = [1,2,3,6,6,7,2,2,8,9];
+ // console.log(nums.indexOf(6));
+  const numUnique = nums.filter((item,index) => nums.indexOf(item) === index);
+  console.log(numUnique);
+
+
+//3번째는 Loop를 통해 미리 지젖ㅇ된 오브젝트에 존재여부 확인
+   function Loop(array) {
+       const loopObj = {};
+       const result = [];
+       for(let element of array) {
+           if(!loopObj[element]) result.push(element);
+           loopObj[element] = element;
+       }
+       return result;
+   }
+
+    console.log(Loop(nums));
+</script>
+
+</body>
+</html>

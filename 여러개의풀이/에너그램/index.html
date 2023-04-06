@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+두 단어의 글자 나열순서는 다르지만 구성이 일치할시 -> 에너그램
+ex) LISTEN <-> SILENT
+
+<script>
+    const strA = "listen";
+    const strB = "silent";
+// #1 split(), sort() join() 배열 -> 정렬 -> 합치기
+    function  isAnagram(a,b) {
+        if(a.length !== b.length) return false;
+        return a.split("").sort().join() ===  b.split("").sort().join();
+    }
+
+    console.log(isAnagram(strA,strB));
+
+
+ //해시 맵  map={}
+
+ function Has(a,b) {
+     if(a.length !== b.length) return false;
+     const hasMap = {}
+     for( const char of a) {
+         hasMap[char] = hasMap[char] ? hasMap[char] + 1 : 1;
+         // {l:1,i:1,s:1}
+     }
+     console.log(hasMap['l']);
+     for(const  char of b) {
+         if(!hasMap[char]) {
+             return  false;
+         }
+         hasMap[char] --;
+     }
+     return  true;
+ }
+
+ console.log(Has(strA,strB));
+
+</script>
+</body>
+</html>
