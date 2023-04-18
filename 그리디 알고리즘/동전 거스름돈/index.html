@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //최소 몇개의 동전을 줘야할까요 ??
+
+    function Coin(amount,coins)  {
+        coins.sort((a,b) => b - a ); //동전 큰 순서대로
+        let count =0;
+        for(let i = 0; i < coins.length; i ++ ){
+            const coin = coins[i];
+            while (amount >= coin) {
+                amount -=coin;
+                count++;
+            }
+        }
+        return count;
+    }
+    const coins =[500,100,50,10]
+    console.log(Coin(1230,coins));
+
+</script>
+
+</body>
+</html>
