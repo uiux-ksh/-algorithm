@@ -8,6 +8,30 @@
     <title>Document</title>
 </head>
 <body>
+    n기간 동안의 주식가격 변화를 기준으로 낼 수 있는 가장 큰 수익 계산하기
 
+    ex) 3일 동안의 주식 가격이 [100,50 ,250]  이라면 최대이익은 200
+    ex) 3일 동안의 주식 가격이 [100,50,20]이라면 최대 수익 0
+
+    <script>
+          function MaxFnc(prices) {
+
+              let maxP = 0; //기본값 0으로 시작
+              let minP =prices[0]; //가장 저렴한가격
+
+             for (let price of prices ) {
+                 if(minP < price) {
+                     maxP = Math.max(maxP,price - minP);
+                 }else{
+                     minP = price
+                 }
+
+             }
+              return maxP;
+              //반복문 돌려서 조건물걸기 (가장저렴한가격, 현재가격을 비교)
+          }
+          let input = [100,200,50,30,150,250]
+          console.log(MaxFnc(input))
+    </script>
 </body>
 </html>
